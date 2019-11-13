@@ -88,6 +88,10 @@ body{
   background-image: url(../images/html-logo.png);
 }
 
+.gitHub-logo{
+  background-image: url(../images/gitHub-logo.png);
+}
+
 .hidden{
   display: none;
 }
