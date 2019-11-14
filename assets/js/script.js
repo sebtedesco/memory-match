@@ -3,6 +3,7 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
+var maxMatches = 9;
 
 function initializeApp(){
   var card = $(".card > .back");
@@ -23,13 +24,22 @@ function handleCardClick(event){
     if(firstCardBackground === secondCardBackground){
       console.log("it's a match!");
       matches++;
+      firstCardClicked = null;
+      secondCardClicked = null;
+        if(matches === maxMatches){
+          alert("You win!")
+        }
     }else{
       setTimeout(function (){
         firstCardClicked.removeClass("hidden");
         secondCardClicked.removeClass("hidden");
+        firstCardClicked = null;
+        secondCardClicked = null;
        }, 1500);
     }
+
   }
+
 
 
 

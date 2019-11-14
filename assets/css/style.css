@@ -77,7 +77,7 @@ body{
 .front{
   height: 100%;
   width: 100%;
-  background-image: url(../images/html-logo.png);
+  /* background-image: url(../images/html-logo.png); */
   background-size: cover;
   background-position: center;
   background-size: cover;
@@ -91,6 +91,35 @@ body{
 .gitHub-logo{
   background-image: url(../images/gitHub-logo.png);
 }
+
+.css-logo{
+  background-image: url(../images/css-logo.png);
+}
+
+.docker-logo{
+  background-image: url(../images/docker-logo.jpg);
+}
+
+.js-logo{
+  background-image: url(../images/js-logo.png);
+}
+
+.mysql-logo{
+  background-image: url(../images/mysql-logo.jpg);
+}
+
+.node-logo{
+  background-image: url(../images/node-logo.png);
+}
+
+.php-logo{
+  background-image: url(../images/php-logo.jpeg);
+}
+
+.react-logo{
+  background-image: url(../images/react-logo.png);
+}
+
 
 .hidden{
   display: none;
