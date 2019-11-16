@@ -8,8 +8,8 @@ body{
 }
 
 .header{
-  height: 15vh;
-  /* background-color: green; */
+  height: 25vh;
+  background-color: green;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 2px;
@@ -18,14 +18,14 @@ body{
 .contents{
   font-size: 0;
   display: flex;
-  height: 85vh;
-  /* background-color: lavender; */
+  height: 75vh;
+  background-color: lavender;
 }
 
 .stats{
   display: flex;
   width: 20%;
-  /* background-color: pink; */
+  background-color: pink;
   flex-direction: column;
   align-content: center;
   justify-content: center;
@@ -45,7 +45,7 @@ body{
 .main{
   display: flex;
   width: 80%;
-  /* background-color: lightseagreen; */
+  background-color: lightseagreen;
   flex-direction: column;
 }
 
@@ -60,7 +60,7 @@ body{
   display: flex;
   width: 100%;
   height: 100%;
-  /* background-color: navy; */
+  background-color: navy;
   border: 1px solid hotpink;
   margin: 0% 2%;
 }
@@ -77,7 +77,7 @@ body{
 .front{
   height: 100%;
   width: 100%;
-  /* background-image: url(../images/html-logo.png); */
+  background-image: url(../images/html-logo.png);
   background-size: cover;
   background-position: center;
   background-size: cover;

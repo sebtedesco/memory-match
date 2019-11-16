@@ -11,6 +11,7 @@ var accuracyPercentage = 0;
 var canBeClicked = true;
 
 function initializeApp(){
+  shuffleCards();
   var card = $(".card > .back");
   card.on("click", handleCardClick);
   $("div.reset-game-button").on("click", resetStats);
@@ -84,32 +85,27 @@ function handleCardClick(event){
     displayStats();
     $(".main div").removeClass("hidden");
     winModal.addClass("hidden");
+    $(".main").empty();
+    initializeApp();
   }
 
   function shuffleCards(){
-    var arrOfCardUrls = ["html-logo", "html - logo", "gitHub-logo", "gitHub-logo", "css-logo",
-    "css-logo", "docker-logo", "docker-logo", "front js-logo", "front js-logo", "react-logo",
+    var arrOfCardUrls = ["html-logo", "html-logo", "gitHub-logo", "gitHub-logo", "css-logo",
+    "css-logo", "docker-logo", "docker-logo", "js-logo", "js-logo", "react-logo",
     "react-logo", "mysql-logo", "mysql-logo", "node-logo", "node-logo", "php-logo", "php-logo"];
-
-    var randomIndex = Math.floor(Math.random() * 20);
-    var randomFrontCardLogoClass = arrOfCardUrls[randomIndex];
-    var frontSkelDiv = $("<div>").addClass("front");
-    var backCardDiv = $("<div>").addClass("back");
-    var rowDiv = $("<div>").addClass("row");
-
-
-
-    for(rowIndex = 0; rowIndex <3; rowIndex++){
-      rowDiv.append(cardDiv);
-    }
-    var arrayIndex = 0;
-    while(arrayIndex = <19){
-
-    }
-
-
-
-    )
-
-
+    for(var index = 0; index < 3; index++){
+      var rowDiv = $("<div>").addClass("row");
+      for(var arrayIndex = 0; arrayIndex < 6; arrayIndex++){
+        var randomIndex = Math.floor(Math.random() * arrOfCardUrls.length);
+        var randomFrontCardLogoClass = arrOfCardUrls[randomIndex];
+        var frontSkelDiv = $("<div>").addClass("front");
+        var newFrontCard = frontSkelDiv.addClass(randomFrontCardLogoClass);
+        var backCardDiv = $("<div>").addClass("back");
+        var card = $("<div>").addClass("card");
+        card.append(newFrontCard, backCardDiv);
+        rowDiv.append(card);
+        arrOfCardUrls.splice(randomIndex, 1);
+      }
+      $("div.main").append(rowDiv);
+      }
   }
