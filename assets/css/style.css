@@ -1,6 +1,7 @@
 body{
   margin: 0;
-  background-image: url(../images/lfz-background.jpg);
+  background: url(../images/background-2.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 *{
@@ -8,44 +9,103 @@ body{
 }
 
 .header{
+  position: relative;
   height: 25vh;
-  background-color: green;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 2px;
+  z-index: -1;
+}
+
+#title{
+  font-family: 'Courier New', Courier, monospace;
+  color: brown;
+}
+
+.waves{
+  position: absolute;
+  bottom: 0%;
+  height: 40px;
+  width: 100%;
+  z-index: 10;
+
+}
+
+.bad-guy{
+  transition-duration: 2000ms;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  height: 15vmin;
+  width: 23vmin;
+  background-image: url(../images/elmer-fudd.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.animation{
+  transition-duration: 2000ms;
+  position: absolute;
+  left: 40%;
+  bottom: 0%;
+  height: 15vmin;
+  width: 23vmin;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.animation-still{
+  background-image: url(../images/bugs-bunny-first.png);
+}
+
+.animation-running{
+  background-image: url(../images/bugs-bunny-running.png);
+}
+
+.animation2{
+  transition-duration: 2000ms;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  height: 15vmin;
+  width: 23vmin;
+  /* background-image: url(../images/bugs-bunny-running.png); */
+
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .contents{
   font-size: 0;
   display: flex;
   height: 75vh;
-  background-color: lavender;
 }
 
 .stats{
   display: flex;
   width: 20%;
-  background-color: pink;
   flex-direction: column;
-  align-content: center;
   justify-content: center;
+  margin: 10px;
 }
 
 .stats-box{
-  border: 2px solid red;
+  border: 2px solid white;
+  background-color: orange;
   margin: 2px;
   padding: 0px;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   text-align: center;
+  border-radius: 15px;
 
 }
 
 .main{
   display: flex;
   width: 80%;
-  background-color: lightseagreen;
   flex-direction: column;
 }
 
@@ -60,8 +120,6 @@ body{
   display: flex;
   width: 100%;
   height: 100%;
-  background-color: navy;
-  border: 1px solid hotpink;
   margin: 0% 2%;
 }
 
@@ -69,9 +127,11 @@ body{
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: url(../images/lfz-card.jpg);
+  background-image: url(../images/bugs-bunny-cover-best.jpg);
   background-size: cover;
   background-position: center;
+  border: 2px solid white;
+  border-radius: 15px;
 }
 
 .front{
@@ -82,42 +142,43 @@ body{
   background-position: center;
   background-size: cover;
   background-position: center;
+  border-radius: 15px;
 }
 
-.html-logo{
-  background-image: url(../images/html-logo.png);
+.yosemite-sam{
+  background-image: url(../images/yosemite-sam.png);
 }
 
-.gitHub-logo{
-  background-image: url(../images/gitHub-logo.png);
+.carrots{
+  background-image: url(../images/carrots.png);
 }
 
-.css-logo{
-  background-image: url(../images/css-logo.png);
+.daffy-duck{
+  background-image: url(../images/daffy-duck.png);
 }
 
-.docker-logo{
-  background-image: url(../images/docker-logo.jpg);
+.tweety-bird{
+  background-image: url(../images/tweety-bird.png);
 }
 
-.js-logo{
-  background-image: url(../images/js-logo.png);
+.taz{
+  background-image: url(../images/taz.png);
 }
 
-.mysql-logo{
-  background-image: url(../images/mysql-logo.jpg);
+.alien{
+  background-image: url(../images/alien.png);
 }
 
-.node-logo{
-  background-image: url(../images/node-logo.png);
+.lola{
+  background-image: url(../images/lola.png);
 }
 
-.php-logo{
-  background-image: url(../images/php-logo.jpeg);
+.coyote{
+  background-image: url(../images/coyote.png);
 }
 
-.react-logo{
-  background-image: url(../images/react-logo.png);
+.fudd-happy{
+  background-image: url(../images/fudd-happy.png);
 }
 
 
@@ -127,23 +188,76 @@ body{
 
 .you-win-modal{
   position: fixed;
-  top: 33%;
+  top: 30%;
   right: 33%;
+  left: 45%;
   height: 38%;
-  width: 27%;
-  background-color: navy;
-  border-radius: 8%;
+  width: 36%;
+  background: url(../images/bugs-white-background.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
 }
 
 .you-win-text{
-  color: white;
-  font-size: 2rem;
+  position: relative;
+  top: -6%;
+  left: -6%;
+  color: saddlebrown;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3rem;
+  font-weight: bold;
   text-align: center;
 }
 
-.reset-game-button{
-  margin: auto;
-  height: 20%;
+.you-lose-modal{
+  position: fixed;
+  top: 34%;
+  right: 33%;
+  left: 41%;
+  height: 31%;
   width: 35%;
-  border: 1px solid red;
+  background-color: white;
+  border: 15px solid saddlebrown;
+  border-radius: 50px;
+  opacity: .9;
+  z-index: 1;
+}
+
+.you-lose-text{
+  color: saddlebrown;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.reset-game-button{
+  position: relative;
+  display: inline;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: saddlebrown;
+  border-radius: 8px;
+  top: 12%;
+  left: 50%;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.try-again-button{
+  position: relative;
+  display: inline;
+  font-size: 22px;
+  color: saddlebrown;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  border: 3px solid saddlebrown;
+  border-radius: 8px;
+  left: 36%;
+  padding: 8px;
+  cursor: pointer;
 }

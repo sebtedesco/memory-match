@@ -1,72 +1,87 @@
 $(document).ready(initializeApp);
 
-var firstCardClicked = null;
-var secondCardClicked = null;
-var matches = 0;
-var maxMatches = 9;
+var firstCardClicked = null; //Variable for the value of the first card click to identify it
+var secondCardClicked = null; //Variable for the value of the second card click to identify it
+var matches = 0; //Number of matches
+var maxMatches = 9; //When number of matches equals maxMatches, the game ends and win modal appears
 var attempts = 0;
 var gamesPlayed = 0;
 var winModal;
+var loseModal;
 var accuracyPercentage = 0;
 var canBeClicked = true;
+var bugsBunnyPosition = 40;
+var elmerFuddPosition = 0;
 
-function initializeApp(){
-  shuffleCards();
+function initializeApp(){ //When the doument is loaded, this function is called
+  shuffleCards(); //Runs shuffleCards function which shuffles all cards randomnly
   var card = $(".card > .back");
-  card.on("click", handleCardClick);
+  card.on("click", handleCardClick); //handleCardClick is called when a card is clicked
   $("div.reset-game-button").on("click", resetStats);
+  $("div.try-again-button").on("click", tryAgain); //When resetStats is clicked (in win modal), game is reset
 }
 
 function handleCardClick(event){
-  if(!canBeClicked) {
+  if(!canBeClicked) { //Conditional for is cards are in timeout period, for no cards to be able to get flipped
     return;
   }
-  console.log("event parameter: ", event);
-  $(event.currentTarget).addClass("hidden");
+  $(event.currentTarget).addClass("hidden"); //This flips the first card clicked on in the turn
 
-  if(!firstCardClicked){
+  //EVENT FOR WHEN FIRST CARD IS CLICKED:
+
+  if(!firstCardClicked){ //If firstCardClicked is null, make firstCardClicked value the value of the card clicked
     firstCardClicked = $(event.currentTarget);
     console.log("firstCardClicked stuff: ", firstCardClicked);
 
+    //EVENT FOR WHEN SECOND CARD IS CLICKED:
   } else {
-    canBeClicked = false;
-    secondCardClicked = $(event.currentTarget);
-    console.log("SECOND card clicked: " + secondCardClicked);
+    canBeClicked = false; //If the second card is clicked, turn canBeClicked to false
+    secondCardClicked = $(event.currentTarget); //This gives secondCardClicked the value of the card clicked
 
-    var firstCardBackground = firstCardClicked.prev().css('background-image');
-    var secondCardBackground = secondCardClicked.prev().css('background-image');
+    var firstCardBackground = firstCardClicked.prev().css('background-image'); //DRY??
+    var secondCardBackground = secondCardClicked.prev().css('background-image'); //DRY??
 
-    if(firstCardBackground === secondCardBackground){
-      console.log("it's a match!");
-      matches++;
-      attempts++;
-      displayStats();
-      firstCardClicked = null;
-      secondCardClicked = null;
-      canBeClicked = true;
-
-        if(matches === maxMatches){
-          gamesPlayed++;
-          displayStats();
-          winModal = $("div.you-win-modal");
-          winModal.removeClass("hidden");
-        }
-    }else{
-      setTimeout(function (){
-        firstCardClicked.removeClass("hidden");
-        secondCardClicked.removeClass("hidden");
-        firstCardClicked = 0;
-        secondCardClicked = 0;
-        gamesPlayed++;
+      if(firstCardBackground === secondCardBackground){
+        console.log("it's a match!");
+        $(".animation").addClass("animation-running");
+        bugsBunnyPosition+=5;
+        $(".animation").css("left", bugsBunnyPosition + "%");
+        matches++;
         attempts++;
         displayStats();
         firstCardClicked = null;
         secondCardClicked = null;
         canBeClicked = true;
-       }, 1500);
+
+          if(matches === maxMatches){
+            gamesPlayed++;
+            displayStats();
+            winModal = $("div.you-win-modal");
+            winModal.removeClass("hidden");
+          }
+      }else{
+        elmerFuddPosition += 5;
+        $(".bad-guy").css("left", elmerFuddPosition + "%");
+      }
+        if(elmerFuddPosition === (bugsBunnyPosition-5)) {
+          loseModal = $("div.you-lose-modal");
+          loseModal.removeClass("hidden");
+      }else{
+          setTimeout(function (){
+          firstCardClicked.removeClass("hidden");
+          secondCardClicked.removeClass("hidden");
+          firstCardClicked = 0;
+          secondCardClicked = 0;
+          attempts++;
+          displayStats();
+          firstCardClicked = null;
+          secondCardClicked = null;
+          canBeClicked = true;
+        }, 1500);
+      }
     }
-  }
 }
+
   function calculateAccuracy(){
     accuracyPercentage = ((matches / attempts) * 100).toFixed(2) + "%";
     return accuracyPercentage;
@@ -82,17 +97,37 @@ function handleCardClick(event){
     matches = 0;
     attempts = 0;
     gamesPlayed++;
+    bugsBunnyPosition = 40;
+    elmerFuddPosition = 0;
+    $(".bad-guy").css("left", elmerFuddPosition + "%");
+    $(".animation").css("left", bugsBunnyPosition + "%");
+    canBeClicked = true;
     displayStats();
     $(".main div").removeClass("hidden");
     winModal.addClass("hidden");
     $(".main").empty();
     initializeApp();
   }
+  function tryAgain() {
+    matches = 0;
+    attempts = 0;
+    gamesPlayed++;
+    bugsBunnyPosition = 40;
+    elmerFuddPosition = 0;
+    $(".bad-guy").css("left", elmerFuddPosition + "%");
+    $(".animation").css("left", bugsBunnyPosition + "%");
+    canBeClicked = true;
+    displayStats();
+    $(".main div").removeClass("hidden");
+    loseModal.addClass("hidden");
+    $(".main").empty();
+    initializeApp();
+  }
 
   function shuffleCards(){
-    var arrOfCardUrls = ["html-logo", "html-logo", "gitHub-logo", "gitHub-logo", "css-logo",
-    "css-logo", "docker-logo", "docker-logo", "js-logo", "js-logo", "react-logo",
-    "react-logo", "mysql-logo", "mysql-logo", "node-logo", "node-logo", "php-logo", "php-logo"];
+    var arrOfCardUrls = ["yosemite-sam", "yosemite-sam", "carrots", "carrots", "daffy-duck",
+    "daffy-duck", "tweety-bird", "tweety-bird", "taz", "taz", "alien",
+    "alien", "lola", "lola", "coyote", "coyote", "fudd-happy", "fudd-happy"];
     for(var index = 0; index < 3; index++){
       var rowDiv = $("<div>").addClass("row");
       for(var arrayIndex = 0; arrayIndex < 6; arrayIndex++){
