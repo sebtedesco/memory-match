@@ -9,11 +9,12 @@
 </head>
 <body>
   <div class="header">
-    <div class="animation">
-
-    </div>
-    <h1>Memory Match, Whoop!</h1>
+    <h1 id="title">Let's Match, Doc!</h1>
+    <div class="waves"></div>
+    <div class="animation animation-still"></div>
+    <div class="bad-guy"></div>
   </div>
+
   <div class="contents">
     <div class="stats">
       <div class="stats-box" id="games-played-title">
@@ -36,13 +37,19 @@
       </div>
     </div>
     <div class="main">
+      <div class="you-win-modal hidden">
+        <div class="you-win-text">
+          <p>You win!</p>
+        </div>
+        <div class="reset-game-button">Play Again</div>
+      </div>
+      <div class="you-lose-modal hidden">
+        <div class="you-lose-text">
+          <p>He got ya!</p>
+        </div>
+        <div class="try-again-button">Try Again</div>
+      </div>
     </div>
-  </div>
-  <div class="you-win-modal hidden">
-    <div class="you-win-text">
-      <p>You win!</p>
-    </div>
-    <div class="reset-game-button"></div>
   </div>
 </body>
 </html>
