@@ -1,14 +1,19 @@
-body{
+* {
+  box-sizing: border-box;
+}
+
+body {
   margin: 0;
   background: url(../images/background-2.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
-*{
-  box-sizing: border-box;
+
+.contents, .stats, .main, .row, .card {
+  display: flex;
 }
 
-.header{
+.header {
   position: relative;
   height: 25vh;
   text-align: center;
@@ -17,7 +22,7 @@ body{
   z-index: -1;
 }
 
-.title{
+.title {
   display: inline-block;
   font-family: 'Courier New', Courier, monospace;
   color: rgb(196, 45, 47);
@@ -29,75 +34,19 @@ body{
   opacity: .8
 }
 
-.waves{
-  position: absolute;
-  bottom: 0%;
-  height: 40px;
-  width: 100%;
-  z-index: 10;
-
-}
-
-.bad-guy{
-  transition-duration: 2000ms;
-  position: absolute;
-  left: 0%;
-  bottom: 0%;
-  height: 15vmin;
-  width: 23vmin;
-  background-image: url(../images/elmer-fudd.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: -1;
-}
-
-.animation{
-  transition-duration: 2000ms;
-  position: absolute;
-  left: 40%;
-  bottom: 0%;
-  height: 15vmin;
-  width: 23vmin;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.animation-still{
-  background-image: url(../images/bugs-bunny-first.png);
-}
-
-.animation-running{
-  background-image: url(../images/bugs-bunny-running.png);
-}
-
-.animation2{
-  transition-duration: 2000ms;
-  position: absolute;
-  left: 0%;
-  bottom: 0%;
-  height: 15vmin;
-  width: 23vmin;
-  /* background-image: url(../images/bugs-bunny-running.png); */
-
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.contents{
+.contents {
   font-size: 0;
-  display: flex;
   height: 75vh;
 }
 
-.stats{
-  display: flex;
+.stats {
   width: 20%;
   flex-direction: column;
   justify-content: center;
   margin: 10px;
 }
 
-.stats-box{
+.stats-box {
   border: 2px solid white;
   background-color: orange;
   margin: 2px;
@@ -110,91 +59,117 @@ body{
 
 }
 
-.main{
-  display: flex;
+.main {
   width: 80%;
   flex-direction: column;
 }
 
-.row{
-  display: flex;
+.card, .back, .front {
+  height: 100%;
+  width: 100%;
+}
+
+.row {
   height: 100%;
   margin: 2% 0%;
 }
 
-.card{
+.card {
   position: relative;
-  display: flex;
-  width: 100%;
-  height: 100%;
   margin: 0% 2%;
 }
 
-.back{
+.back, .front {
   position: absolute;
-  height: 100%;
-  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+
+.back {
   background-image: url(../images/bugs-bunny-cover-best.jpg);
-  background-size: cover;
-  background-position: center;
-  border: 2px solid white;
-  border-radius: 15px;
 }
 
-.front{
-  height: 100%;
-  width: 100%;
+.front {
   background-image: url(../images/html-logo.png);
-  background-size: cover;
-  background-position: center;
-  background-size: cover;
-  background-position: center;
-  border: 2px solid white;
-  border-radius: 15px;
 }
 
-.yosemite-sam{
+.bugs-bunny, .bad-guy {
+  transition-duration: 2000ms;
+  position: absolute;
+  height: 15vmin;
+  width: 23vmin;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bad-guy {
+  left: 0%;
+  bottom: 0%;
+  background-image: url(../images/elmer-fudd.png);
+  z-index: -1;
+}
+
+.bugs-bunny {
+  left: 40%;
+  bottom: 0%;
+}
+
+@media only screen and (max-device-width: 1024px) and (orientation: portrait), (max-width: 560px) {
+
+}
+
+.bugs-still {
+  background-image: url(../images/bugs-bunny-first.png);
+}
+
+.bugs-running {
+  background-image: url(../images/bugs-bunny-running.png);
+}
+
+.yosemite-sam {
   background-image: url(../images/yosemite-sam.png);
 }
 
-.carrots{
+.carrots {
   background-image: url(../images/carrots.png);
 }
 
-.daffy-duck{
+.daffy-duck {
   background-image: url(../images/daffy-duck.png);
 }
 
-.tweety-bird{
+.tweety-bird {
   background-image: url(../images/tweety-bird.png);
 }
 
-.taz{
+.taz {
   background-image: url(../images/taz.png);
 }
 
-.alien{
+.alien {
   background-image: url(../images/alien.png);
 }
 
-.lola{
+.lola  {
   background-image: url(../images/lola.png);
 }
 
-.coyote{
+.coyote {
   background-image: url(../images/coyote.png);
 }
 
-.fudd-happy{
+.fudd-happy {
   background-image: url(../images/fudd-happy.png);
 }
 
 
-.hidden{
+.hidden {
   display: none;
 }
 
-.you-win-modal{
+.you-win-modal {
   position: fixed;
   top: 30%;
   right: 33%;
@@ -207,7 +182,7 @@ body{
   z-index: 1;
 }
 
-.you-win-text{
+.you-win-text {
   position: relative;
   top: -6%;
   left: -6%;
@@ -218,7 +193,7 @@ body{
   text-align: center;
 }
 
-.you-lose-modal{
+.you-lose-modal {
   position: fixed;
   top: 34%;
   right: 33%;
@@ -232,7 +207,7 @@ body{
   z-index: 1;
 }
 
-.you-lose-text{
+.you-lose-text {
   color: saddlebrown;
   font-family: 'Courier New', Courier, monospace;
   font-size: 3rem;
@@ -241,7 +216,7 @@ body{
 
 }
 
-.reset-game-button{
+.reset-game-button {
   position: relative;
   display: inline;
   color: white;
@@ -256,7 +231,7 @@ body{
   cursor: pointer;
 }
 
-.try-again-button{
+.try-again-button {
   position: relative;
   display: inline;
   font-size: 22px;

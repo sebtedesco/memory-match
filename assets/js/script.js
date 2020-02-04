@@ -43,9 +43,9 @@ function handleCardClick(event){
 
       if(firstCardBackground === secondCardBackground){
         console.log("it's a match!");
-        $(".animation").addClass("animation-running");
+        $(".bugs-bunny").addClass("bugs-running");
         bugsBunnyPosition+=5;
-        $(".animation").css("left", bugsBunnyPosition + "%");
+        $(".bugs-bunny").css("left", bugsBunnyPosition + "%");
         matches++;
         attempts++;
         displayStats();
@@ -100,7 +100,7 @@ function handleCardClick(event){
     bugsBunnyPosition = 40;
     elmerFuddPosition = 0;
     $(".bad-guy").css("left", elmerFuddPosition + "%");
-    $(".animation").css("left", bugsBunnyPosition + "%");
+    $(".bugs-bunny").css("left", bugsBunnyPosition + "%");
     canBeClicked = true;
     displayStats();
     $(".main div").removeClass("hidden");
@@ -115,7 +115,7 @@ function handleCardClick(event){
     bugsBunnyPosition = 40;
     elmerFuddPosition = 0;
     $(".bad-guy").css("left", elmerFuddPosition + "%");
-    $(".animation").css("left", bugsBunnyPosition + "%");
+    $(".bugs-bunny").css("left", bugsBunnyPosition + "%");
     canBeClicked = true;
     displayStats();
     $(".main div").removeClass("hidden");
