@@ -103,9 +103,9 @@ function handleCardClick(event){
     $(".bugs-bunny").css("left", bugsBunnyPosition + "%");
     canBeClicked = true;
     displayStats();
-    $(".main div").removeClass("hidden");
+    $(".container-around-cards div").removeClass("hidden");
     winModal.addClass("hidden");
-    $(".main").empty();
+    $(".container-around-cards").empty();
     initializeApp();
   }
   function tryAgain() {
@@ -118,9 +118,9 @@ function handleCardClick(event){
     $(".bugs-bunny").css("left", bugsBunnyPosition + "%");
     canBeClicked = true;
     displayStats();
-    $(".main div").removeClass("hidden");
+    $(".container-around-cards div").removeClass("hidden");
     loseModal.addClass("hidden");
-    $(".main").empty();
+    $(".container-around-cards").empty();
     initializeApp();
   }
 
@@ -128,19 +128,15 @@ function handleCardClick(event){
     var arrOfCardUrls = ["yosemite-sam", "yosemite-sam", "carrots", "carrots", "daffy-duck",
     "daffy-duck", "tweety-bird", "tweety-bird", "taz", "taz", "alien",
     "alien", "lola", "lola", "coyote", "coyote", "fudd-happy", "fudd-happy"];
-    for(var index = 0; index < 3; index++){
-      var rowDiv = $("<div>").addClass("row");
-      for(var arrayIndex = 0; arrayIndex < 6; arrayIndex++){
-        var randomIndex = Math.floor(Math.random() * arrOfCardUrls.length);
-        var randomFrontCardLogoClass = arrOfCardUrls[randomIndex];
-        var frontSkelDiv = $("<div>").addClass("front");
-        var newFrontCard = frontSkelDiv.addClass(randomFrontCardLogoClass);
-        var backCardDiv = $("<div>").addClass("back");
-        var card = $("<div>").addClass("card");
-        card.append(newFrontCard, backCardDiv);
-        rowDiv.append(card);
-        arrOfCardUrls.splice(randomIndex, 1);
-      }
-      $("div.main").append(rowDiv);
-      }
+    for(var arrayIndex = 0; arrayIndex < arrOfCardUrls.length;){
+      var randomIndex = Math.floor(Math.random() * arrOfCardUrls.length);
+      var randomFrontCardLogoClass = arrOfCardUrls[randomIndex];
+      var frontSkelDiv = $("<div>").addClass("front");
+      var newFrontCard = frontSkelDiv.addClass(randomFrontCardLogoClass);
+      var backCardDiv = $("<div>").addClass("back");
+      var card = $("<div>").addClass("card");
+      card.append(newFrontCard, backCardDiv);
+      $("div.container-around-cards").append(card);
+      arrOfCardUrls.splice(randomIndex, 1);
+    }
   }
