@@ -9,7 +9,7 @@ body {
 }
 
 
-.contents, .stats, .main, .row, .card {
+.contents, .stats, .container-around-cards, .card {
   display: flex;
 }
 
@@ -59,9 +59,12 @@ body {
 
 }
 
-.main {
+.container-around-cards {
   width: 80%;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 8px;
 }
 
 .card, .back, .front {
@@ -69,14 +72,11 @@ body {
   width: 100%;
 }
 
-.row {
-  height: 100%;
-  margin: 2% 0%;
-}
-
 .card {
+  height: 30%;
+  width: 14%;
   position: relative;
-  margin: 0% 2%;
+  margin: 0% 1%;
 }
 
 .back, .front {
@@ -85,14 +85,6 @@ body {
   background-position: center;
   border: 2px solid white;
   border-radius: 15px;
-}
-
-.back {
-  background-image: url(../images/bugs-bunny-cover-best.jpg);
-}
-
-.front {
-  background-image: url(../images/html-logo.png);
 }
 
 .bugs-bunny, .bad-guy {
@@ -118,6 +110,118 @@ body {
 
 @media only screen and (max-device-width: 1024px) and (orientation: portrait), (max-width: 560px) {
 
+  .contents, .stats, .container-around-cards, .card {
+  display: flex;
+  }
+
+  .header {
+    position: relative;
+    height: 16vh;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 2px;
+    z-index: -1;
+  }
+
+  .title {
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(196, 45, 47);
+    font-weight: bold;
+    background-color: white;
+    margin-top: 8px;
+    padding: 2px;
+    border-radius: 8px;
+    opacity: .8
+  }
+
+  .contents {
+    flex-wrap: wrap;
+    font-size: 0;
+    height: 84vh;
+  }
+
+  .stats {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    margin: 10px;
+  }
+
+  .stats-box {
+    height: 40%;
+    width: 30%;
+    border: 2px solid white;
+    background-color: orange;
+    margin: 2px;
+    padding: 0px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 15px;
+
+  }
+
+  .container-around-cards {
+    flex-direction: row;
+    height: 90%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 8px;
+  }
+
+  .card, .back, .front {
+    height: 100%;
+    width: 100%;
+  }
+
+  .card {
+    height: 30%;
+    width: 14%;
+    position: relative;
+    margin: 0% 1%;
+  }
+
+  .back, .front {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid white;
+    border-radius: 15px;
+  }
+
+  .bugs-bunny, .bad-guy {
+    transition-duration: 2000ms;
+    position: absolute;
+    height: 15vmin;
+    width: 23vmin;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .bad-guy {
+    left: 0%;
+    bottom: 0%;
+    background-image: url(../images/elmer-fudd.png);
+    z-index: -1;
+  }
+
+  .bugs-bunny {
+    left: 40%;
+    bottom: 0%;
+  }
+}
+
+.back {
+  background-image: url(../images/bugs-bunny-cover-best.jpg);
+}
+
+.front {
+  background-image: url(../images/html-logo.png);
 }
 
 .bugs-still {
