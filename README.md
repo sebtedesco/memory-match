@@ -1,10 +1,10 @@
-# Bugs Bunny Memory Match
+# Let's Match, Doc!
 
 > - Maintained by: `sebtedesco`
 
 ## Description
 
-Don't let Elmer Fudd catch our beloved Bugs Bunny! 7 misses off the bat and Bugs gets caught. With each match he runs towards safety.
+Don't let Elmer Fudd catch Bugs Bunny in this fully responsive Memory Match game! 7 misses off the bat and Bugs gets caught. With each match he runs towards safety.
 
 ## Live Demo
 
@@ -36,7 +36,6 @@ HTML5, CSS3, JavaScript (ES5), jQuery
 
     ```shell
     git clone https://github.com/sebtedesco/memory-match.git
-    cd Memory Match
     ```
 
 2. Go to `index.html` in Text Editor and open in browser
