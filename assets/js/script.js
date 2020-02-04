@@ -31,7 +31,7 @@ function handleCardClick(event){
 
   if(!firstCardClicked){ //If firstCardClicked is null, make firstCardClicked value the value of the card clicked
     firstCardClicked = $(event.currentTarget);
-    console.log("firstCardClicked stuff: ", firstCardClicked);
+    // console.log("firstCardClicked stuff: ", firstCardClicked);
 
     //EVENT FOR WHEN SECOND CARD IS CLICKED:
   } else {
@@ -83,7 +83,7 @@ function handleCardClick(event){
 }
 
   function calculateAccuracy(){
-    accuracyPercentage = ((matches / attempts) * 100).toFixed(2) + "%";
+    accuracyPercentage = ((matches / attempts) * 100).toFixed(0) + "%";
     return accuracyPercentage;
   }
 
