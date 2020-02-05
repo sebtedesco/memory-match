@@ -8,7 +8,7 @@ Don't let Elmer Fudd catch Bugs Bunny in this fully responsive Memory Match game
 
 ## Live Demo
 
-Play the game live at [https://www.memorymatch.sebtedesco.com](https://www.memorymatch.sebtedesco.com)
+Play the game live at [https://www.match.sebtedesco.com](https://www.memorymatch.sebtedesco.com)
 
 ## Technologies Used
 
