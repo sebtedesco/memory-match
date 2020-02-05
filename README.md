@@ -1,9 +1,5 @@
 # Let's Match, Doc!
 
-> - Maintained by: `sebtedesco`
-
-## Description
-
 Don't let Elmer Fudd catch Bugs Bunny in this fully responsive Memory Match game! 7 misses off the bat and Bugs gets caught. With each match he runs towards safety.
 
 ## Live Demo
