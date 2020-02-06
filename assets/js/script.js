@@ -88,9 +88,9 @@ function handleCardClick(event){
   }
 
   function displayStats(){
-    $(".stats-box #attempts").text(attempts);
-    $(".stats-box #games-played").text(gamesPlayed);
-    $(".stats-box #accuracy").text(calculateAccuracy());
+    $(".stats-box #attempts-value").text(attempts);
+    $(".stats-box #games-played-value").text(gamesPlayed);
+    $(".stats-box #accuracy-value").text(calculateAccuracy());
   }
 
   function resetStats(){
