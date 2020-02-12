@@ -42,7 +42,7 @@ body {
 .stats {
   width: 20%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 10px;
 }
 
