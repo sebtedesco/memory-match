@@ -67,16 +67,17 @@ body {
   padding: 8px;
 }
 
-.back, .front {
-  height: 100%;
-  width: 100%;
-}
-
 .card {
+  cursor: pointer;
   height: 30%;
   width: 14%;
   position: relative;
   margin: 0% 1%;
+}
+
+.back, .front {
+  height: 100%;
+  width: 100%;
 }
 
 .back, .front {

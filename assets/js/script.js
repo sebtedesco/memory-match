@@ -70,8 +70,6 @@ function handleCardClick(event){
           setTimeout(function (){
           firstCardClicked.removeClass("hidden");
           secondCardClicked.removeClass("hidden");
-          firstCardClicked = 0;
-          secondCardClicked = 0;
           attempts++;
           displayStats();
           firstCardClicked = null;
