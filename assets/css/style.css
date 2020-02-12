@@ -1,9 +1,9 @@
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-  margin: 0;
   background: url(../images/background-2.jpg) no-repeat center center fixed;
   background-size: cover;
 }
@@ -25,13 +25,12 @@ body {
 .title {
   display: inline-block;
   font-family: 'Courier New', Courier, monospace;
-  color: rgb(196, 45, 47);
+  font-size: 3rem;
+  color: white;
   font-weight: bold;
-  background-color: white;
   margin-top: 8px;
   padding: 2px;
   border-radius: 8px;
-  opacity: .8
 }
 
 .contents {
@@ -49,8 +48,8 @@ body {
 .stats-box {
   border: 2px solid white;
   background-color: orange;
-  margin: 2px;
-  padding: 0px;
+  margin: 4px;
+  padding: 12px;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
@@ -109,69 +108,6 @@ body {
   bottom: 0%;
 }
 
-@media only screen
-  and (min-device-width: 200px)
-  and (max-device-width: 1024px)
-  and (orientation: portrait)
-  and (-webkit-min-device-pixel-ratio: 1) {
-
-  .bugs-bunny, bugs-still, .bad-guy {
-    display: none;
-  }
-
-  .header {
-  height: 15vh;
-  padding-top: 2px;
-}
-
-.title {
-  font-size: 3rem;
-  margin: 30px;
-  height: 4vh;
-  width: 55vw;
-}
-
-  .contents {
-    flex-wrap: wrap;
-    font-size: 0;
-    height: 85vh;
-}
-
-  #games-played, #attempts, #accuracy {
-    height: 85%;
-    width: 33%;
-  }
-
-  .stats {
-    flex-wrap: wrap;
-    height: 12%;
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    margin: 2px;
-  }
-
-  .stats-box {
-    height: 48%;
-    width: 95%;
-    font-size: 13.5px;
-    border-radius: 15px;
-
-  }
-
-  .container-around-cards {
-    height: 88%;
-    width: 100%;
-  }
-
-  .card {
-    height: 15%;
-    width: 25%;
-  }
-
-}
-
 .back {
   background-image: url(../images/bugs-bunny-cover-best.jpg);
 }
@@ -224,83 +160,146 @@ body {
   background-image: url(../images/fudd-happy.png);
 }
 
-
 .hidden {
-  display: none;
+  display: none!important;
 }
 
-.you-win-modal {
-  position: fixed;
-  top: 30%;
-  right: 33%;
-  left: 45%;
-  height: 38%;
-  width: 36%;
+
+/* .you-win-modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  top: 34%;
+  left: 35%;
+  height: 33%;
+  width: 30%;
   background: url(../images/bugs-white-background.jpg);
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 1;
-}
+  border-radius: 8px; */
+/* } */
 
-.you-win-text {
-  position: relative;
+/* .you-win-text {
+  display: inline-block;
   top: -6%;
   left: -6%;
   color: saddlebrown;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
-}
+} */
 
-.you-lose-modal {
-  position: fixed;
-  top: 34%;
-  right: 33%;
-  left: 41%;
+.modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  top: 29%;
+  left: 32%;
   height: 31%;
   width: 35%;
   background-color: white;
-  border: 15px solid saddlebrown;
+  border: 9px solid saddlebrown;
   border-radius: 50px;
-  opacity: .9;
+  opacity: .95;
   z-index: 1;
 }
 
-.you-lose-text {
+.modal-text {
   color: saddlebrown;
   font-family: 'Courier New', Courier, monospace;
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
-
+  margin: 0;
 }
 
 .reset-game-button {
-  position: relative;
-  display: inline;
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
-  background-color: saddlebrown;
-  border-radius: 8px;
-  top: 12%;
-  left: 50%;
-  padding: 15px;
-  cursor: pointer;
-}
-
-.try-again-button {
-  position: absolute;
-  display: inline;
-  font-size: 22px;
+  font-size: 1.2rem;
   color: saddlebrown;
   font-weight: bold;
   font-family: 'Courier New', Courier, monospace;
   border: 3px solid saddlebrown;
   border-radius: 8px;
-  left: 32%;
-  padding: 8px;
+  padding: 4px;
   cursor: pointer;
+  margin-right: 11px;
 }
+
+@media only screen
+  and (min-device-width: 200px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+  .bugs-bunny, bugs-still, .bad-guy {
+    display: none;
+  }
+
+  .header {
+  height: 15vh;
+  padding-top: 2px;
+}
+
+.title {
+  font-size: 3rem;
+  margin: 30px;
+  height: 4vh;
+  width: 55vw;
+}
+
+  .contents {
+    flex-wrap: wrap;
+    font-size: 0;
+    height: 85vh;
+}
+
+  #games-played, #attempts, #accuracy {
+    height: 85%;
+    width: 33%;
+  }
+
+  .stats {
+    flex-wrap: wrap;
+    height: 12%;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin: 2px;
+  }
+
+  .stats-box {
+    height: 48%;
+    width: 95%;
+    font-size: 13.5px;
+    border-radius: 15px;
+  }
+
+  .container-around-cards {
+    height: 88%;
+    width: 100%;
+  }
+
+  .card {
+    height: 15%;
+    width: 25%;
+  }
+
+  .modal {
+    height: 20%;
+    width: 50%;
+    top: 40%;
+    left: 25%;
+  }
+
+  .reset-game-button {
+    font-size: 2.2rem;
+  }
+
+  }
