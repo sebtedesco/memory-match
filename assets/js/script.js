@@ -1,9 +1,9 @@
 $(document).ready(initializeApp);
 
-var firstCardClicked = null; //Variable for the value of the first card click to identify it
-var secondCardClicked = null; //Variable for the value of the second card click to identify it
-var matches = 0; //Number of matches
-var maxMatches = 9; //When number of matches equals maxMatches, the game ends and win modal appears
+var firstCardClicked = null;
+var secondCardClicked = null;
+var matches = 0;
+var maxMatches = 9;
 var attempts = 0;
 var gamesPlayed = 0;
 var winModal;
@@ -13,33 +13,27 @@ var canBeClicked = true;
 var bugsBunnyPosition = 40;
 var elmerFuddPosition = 0;
 
-function initializeApp(){ //When the doument is loaded, this function is called
-  shuffleCards(); //Runs shuffleCards function which shuffles all cards randomnly
+function initializeApp(){
+  shuffleCards();
   var card = $(".card > .back");
-  card.on("click", handleCardClick); //handleCardClick is called when a card is clicked
+  card.on("click", handleCardClick);
   $("div.reset-game-button").on("click", resetStats);
-  $("div.try-again-button").on("click", tryAgain); //When resetStats is clicked (in win modal), game is reset
+  $("div.try-again-button").on("click", tryAgain);
 }
 
 function handleCardClick(event){
-  if(!canBeClicked) { //Conditional for is cards are in timeout period, for no cards to be able to get flipped
+  if(!canBeClicked) {
     return;
   }
-  $(event.currentTarget).addClass("hidden"); //This flips the first card clicked on in the turn
+  $(event.currentTarget).addClass("hidden");
 
-  //EVENT FOR WHEN FIRST CARD IS CLICKED:
-
-  if(!firstCardClicked){ //If firstCardClicked is null, make firstCardClicked value the value of the card clicked
+  if(!firstCardClicked){
     firstCardClicked = $(event.currentTarget);
-    // console.log("firstCardClicked stuff: ", firstCardClicked);
-
-    //EVENT FOR WHEN SECOND CARD IS CLICKED:
   } else {
-    canBeClicked = false; //If the second card is clicked, turn canBeClicked to false
-    secondCardClicked = $(event.currentTarget); //This gives secondCardClicked the value of the card clicked
-
-    var firstCardBackground = firstCardClicked.prev().css('background-image'); //DRY??
-    var secondCardBackground = secondCardClicked.prev().css('background-image'); //DRY??
+    canBeClicked = false;
+    secondCardClicked = $(event.currentTarget);
+    var firstCardBackground = firstCardClicked.prev().css('background-image');
+    var secondCardBackground = secondCardClicked.prev().css('background-image');
 
       if(firstCardBackground === secondCardBackground){
         console.log("it's a match!");
