@@ -56,7 +56,7 @@ function handleCardClick(event){
           if(matches === maxMatches){
             gamesPlayed++;
             displayStats();
-            winModal = $("div.you-win-modal");
+            winModal = $("div.win-modal");
             winModal.removeClass("hidden");
           }
       }else{
@@ -64,7 +64,7 @@ function handleCardClick(event){
         $(".bad-guy").css("left", elmerFuddPosition + "%");
       }
         if(elmerFuddPosition === (bugsBunnyPosition-5)) {
-          loseModal = $("div.you-lose-modal");
+          loseModal = $("div.lose-modal");
           loseModal.removeClass("hidden");
       }else{
           setTimeout(function (){
@@ -81,6 +81,9 @@ function handleCardClick(event){
 }
 
   function calculateAccuracy(){
+    if(attempts === 0) {
+      return '-'
+    };
     accuracyPercentage = ((matches / attempts) * 100).toFixed(0) + "%";
     return accuracyPercentage;
   }
@@ -107,8 +110,10 @@ function handleCardClick(event){
     initializeApp();
   }
   function tryAgain() {
+    debugger;
     matches = 0;
     attempts = 0;
+    accuracyPercentage = 0;
     gamesPlayed++;
     bugsBunnyPosition = 40;
     elmerFuddPosition = 0;
