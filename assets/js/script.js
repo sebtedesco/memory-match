@@ -110,7 +110,6 @@ function handleCardClick(event){
     initializeApp();
   }
   function tryAgain() {
-    debugger;
     matches = 0;
     attempts = 0;
     accuracyPercentage = 0;
