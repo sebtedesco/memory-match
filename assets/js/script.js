@@ -42,7 +42,6 @@ function handleCardClick(event){
     var secondCardBackground = secondCardClicked.prev().css('background-image');
 
       if(firstCardBackground === secondCardBackground){
-        console.log("it's a match!");
         $(".bugs-bunny").addClass("bugs-running");
         bugsBunnyPosition+=5;
         $(".bugs-bunny").css("left", bugsBunnyPosition + "%");
