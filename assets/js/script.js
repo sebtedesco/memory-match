@@ -3,7 +3,7 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = 0;
-var maxMatches = 1;
+var maxMatches = 9;
 var attempts = 0;
 var gamesPlayed = 0;
 var winModal;
