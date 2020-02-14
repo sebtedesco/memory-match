@@ -3,7 +3,7 @@ $(document).ready(initializeApp);
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = 0;
-var maxMatches = 9;
+var maxMatches = 1;
 var attempts = 0;
 var gamesPlayed = 0;
 var winModal;
@@ -52,30 +52,29 @@ function handleCardClick(event){
         firstCardClicked = null;
         secondCardClicked = null;
         canBeClicked = true;
-
-          if(matches === maxMatches){
-            gamesPlayed++;
-            displayStats();
-            winModal = $("div.win-modal");
-            winModal.removeClass("hidden");
-          }
+        if(matches === maxMatches){
+          gamesPlayed++;
+          displayStats();
+          winModal = $("div.win-modal");
+          winModal.removeClass("hidden");
+        }
       }else{
         elmerFuddPosition += 5;
         $(".bad-guy").css("left", elmerFuddPosition + "%");
-      }
         if(elmerFuddPosition === (bugsBunnyPosition-5)) {
           loseModal = $("div.lose-modal");
           loseModal.removeClass("hidden");
-      }else{
+        }else{
           setTimeout(function (){
-          firstCardClicked.removeClass("hidden");
-          secondCardClicked.removeClass("hidden");
-          attempts++;
-          displayStats();
-          firstCardClicked = null;
-          secondCardClicked = null;
-          canBeClicked = true;
-        }, 1500);
+            firstCardClicked.removeClass("hidden");
+            secondCardClicked.removeClass("hidden");
+            attempts++;
+            displayStats();
+            firstCardClicked = null;
+            secondCardClicked = null;
+            canBeClicked = true;
+          }, 1500);
+        }
       }
     }
 }

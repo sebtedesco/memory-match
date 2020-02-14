@@ -182,14 +182,11 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 2.2rem;
   font-weight: bold;
-  height: 8   vh;
   margin: 0;
   border-right: 2px solid rgba(255,255,255,0);
   white-space: nowrap;
   overflow: hidden;
 }
-
-/* TYPEWRITER ANIMATION: */
 
 /* Animation */
 .anim-typewriter1{
