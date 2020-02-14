@@ -165,11 +165,7 @@ body {
 }
 
 .start-modal {
-  background-image: url(../images/looney-tunes-logo.png);
-  background-size: 25%;
-  background-repeat: no-repeat;
   position: absolute;
-  background-position: bottom;
   padding: 16px 35px;
   top: 0;
   left: 0;
@@ -186,7 +182,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-size: 2.5rem;
   font-weight: bold;
-  height: 8vh;
+  height: 8   vh;
   margin: 0;
   border-right: 2px solid rgba(255,255,255,0);
   white-space: nowrap;
@@ -197,18 +193,18 @@ body {
 
 /* Animation */
 .anim-typewriter1{
-  animation: typewriter 5s steps(66) 1s 1 normal both,
-             blinkTextCursor 500ms steps(66) 7.5 normal;
+  animation: typewriter 3s steps(66) 1s 1 normal both,
+             blinkTextCursor 800ms steps(66) 3.2 normal;
 }
 
 .anim-typewriter2{
-  animation: typewriter 5s steps(66) 4s 1 normal both,
-             blinkTextCursor 500ms steps(66) 4s 8 normal;
+  animation: typewriter 3s steps(66) 3s 1 normal both,
+             blinkTextCursor 800ms steps(66) 3s 3 normal;
 }
 
 .anim-typewriter3{
-  animation: typewriter 5s steps(66) 8s 1 normal both,
-             blinkTextCursor 500ms steps(66) 8s infinite normal;
+  animation: typewriter 3.5s steps(66) 5.5s 1 normal both,
+             blinkTextCursor 800ms steps(66) 5.5s infinite normal;
 }
 @keyframes typewriter{
   from{width: 0;}
@@ -217,6 +213,18 @@ body {
 @keyframes blinkTextCursor{
   from{border-right-color: brown;}
   to{border-right-color: transparent;}
+}
+
+.start-button {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  height: 20vh;
+  width: 20vw;
+  background-image: url(../images/looney-tunes-logo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
 }
 
 .win-modal, .lose-modal {
@@ -264,10 +272,6 @@ div.modal-text {
   and (max-device-width: 1024px)
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 1) {
-
-  /* .bugs-bunny, bugs-still, .bad-guy {
-    display: none;
-  } */
 
   .header {
   height: 25vh;
