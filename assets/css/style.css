@@ -164,6 +164,61 @@ body {
   background-image: url(../images/fudd-happy.png);
 }
 
+.start-modal {
+  background-image: url(../images/looney-tunes-logo.png);
+  background-size: 25%;
+  background-repeat: no-repeat;
+  position: absolute;
+  background-position: bottom;
+  padding: 16px 35px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  opacity: .95;
+  z-index: 1;
+}
+
+.start-modal-text {
+  display: block;
+  color: saddlebrown;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+  height: 8vh;
+  margin: 0;
+  border-right: 2px solid rgba(255,255,255,0);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* TYPEWRITER ANIMATION: */
+
+/* Animation */
+.anim-typewriter1{
+  animation: typewriter 5s steps(66) 1s 1 normal both,
+             blinkTextCursor 500ms steps(66) 7.5 normal;
+}
+
+.anim-typewriter2{
+  animation: typewriter 5s steps(66) 4s 1 normal both,
+             blinkTextCursor 500ms steps(66) 4s 8 normal;
+}
+
+.anim-typewriter3{
+  animation: typewriter 5s steps(66) 8s 1 normal both,
+             blinkTextCursor 500ms steps(66) 8s infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: brown;}
+  to{border-right-color: transparent;}
+}
+
 .win-modal, .lose-modal {
   position: absolute;
   display: flex;
@@ -181,13 +236,15 @@ body {
   z-index: 1;
 }
 
-.modal-text {
+div.modal-text {
   color: saddlebrown;
   font-family: 'Courier New', Courier, monospace;
   font-size: 3rem;
   font-weight: bold;
+}
+
+.modal-text {
   text-align: center;
-  margin: 0;
 }
 
 .reset-game-button, .try-again-button {
@@ -208,12 +265,12 @@ body {
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 1) {
 
-  .bugs-bunny, bugs-still, .bad-guy {
+  /* .bugs-bunny, bugs-still, .bad-guy {
     display: none;
-  }
+  } */
 
   .header {
-  height: 15vh;
+  height: 25vh;
   padding-top: 2px;
 }
 
@@ -227,7 +284,7 @@ body {
   .contents {
     flex-wrap: wrap;
     font-size: 0;
-    height: 85vh;
+    height: 75vh;
 }
 
   #games-played, #attempts, #accuracy {
