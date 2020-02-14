@@ -17,8 +17,14 @@ function initializeApp(){
   shuffleCards();
   var card = $(".card > .back");
   card.on("click", handleCardClick);
+  $("div.start-button").on("click", hideStartModal);
   $("div.reset-game-button").on("click", resetStats);
   $("div.try-again-button").on("click", tryAgain);
+}
+
+function hideStartModal() {
+  var startModal = $("div.start-modal");
+  startModal.addClass("hidden");
 }
 
 function handleCardClick(event){
