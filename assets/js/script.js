@@ -61,8 +61,11 @@ function handleCardClick(event){
         elmerFuddPosition += 5;
         $(".bad-guy").css("left", elmerFuddPosition + "%");
         if(elmerFuddPosition === (bugsBunnyPosition-5)) {
+          debugger;
+          // canBeClicked = false;
           loseModal = $("div.lose-modal");
           loseModal.removeClass("hidden");
+          return;
         }else{
           setTimeout(function (){
             firstCardClicked.removeClass("hidden");
@@ -100,7 +103,6 @@ function handleCardClick(event){
     elmerFuddPosition = 0;
     $(".bad-guy").css("left", elmerFuddPosition + "%");
     $(".bugs-bunny").css("left", bugsBunnyPosition + "%");
-    canBeClicked = true;
     displayStats();
     $(".container-around-cards div").removeClass("hidden");
     winModal.addClass("hidden");
@@ -116,7 +118,6 @@ function handleCardClick(event){
     elmerFuddPosition = 0;
     $(".bad-guy").css("left", elmerFuddPosition + "%");
     $(".bugs-bunny").css("left", bugsBunnyPosition + "%");
-    canBeClicked = true;
     displayStats();
     $(".container-around-cards div").removeClass("hidden");
     loseModal.addClass("hidden");
