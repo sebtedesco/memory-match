@@ -65,7 +65,9 @@ function handleCardClick(event){
           // canBeClicked = false;
           loseModal = $("div.lose-modal");
           loseModal.removeClass("hidden");
-          return;
+          setTimeout(function (){
+            canBeClicked = true;
+          }, 1500);
         }else{
           setTimeout(function (){
             firstCardClicked.removeClass("hidden");
