@@ -6,7 +6,7 @@ var matches = 0;
 var maxMatches = 9;
 var attempts = 0;
 var gamesPlayed = 0;
-var winModal;
+var winModal = $("div.win-modal");
 var loseModal;
 var accuracyPercentage = 0;
 var canBeClicked = true;
@@ -54,18 +54,15 @@ function handleCardClick(event){
         if(matches === maxMatches){
           gamesPlayed++;
           displayStats();
-          winModal = $("div.win-modal");
           winModal.removeClass("hidden");
         }
       }else{
         elmerFuddPosition += 5;
         $(".bad-guy").css("left", elmerFuddPosition + "%");
         if(elmerFuddPosition === (bugsBunnyPosition-5)) {
-          debugger;
-          // canBeClicked = false;
+          canBeClicked = false;
           loseModal = $("div.lose-modal");
           loseModal.removeClass("hidden");
-          return;
         }else{
           setTimeout(function (){
             firstCardClicked.removeClass("hidden");
@@ -116,6 +113,8 @@ function handleCardClick(event){
     gamesPlayed++;
     bugsBunnyPosition = 40;
     elmerFuddPosition = 0;
+    firstCardClicked = null;
+    secondCardClicked = null;
     $(".bad-guy").css("left", elmerFuddPosition + "%");
     $(".bugs-bunny").css("left", bugsBunnyPosition + "%");
     displayStats();
@@ -123,6 +122,9 @@ function handleCardClick(event){
     loseModal.addClass("hidden");
     $(".container-around-cards").empty();
     initializeApp();
+    setTimeout(function () {
+      canBeClicked = true;
+    }, 3000);
   }
 
   function shuffleCards(){
