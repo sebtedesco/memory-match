@@ -61,7 +61,7 @@ function handleCardClick(event){
         elmerFuddPosition += 5;
         $(".bad-guy").css("left", elmerFuddPosition + "%");
         if(elmerFuddPosition === (bugsBunnyPosition-5)) {
-          // canBeClicked = false;
+
           loseModal = $("div.lose-modal");
           loseModal.removeClass("hidden");
         }else{
