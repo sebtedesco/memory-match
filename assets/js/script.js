@@ -54,7 +54,7 @@ function handleCardClick(event){
         if(matches === maxMatches){
           gamesPlayed++;
           displayStats();
-          winModal =  = $("div.win-modal");
+          winModal = $("div.win-modal");
           winModal.removeClass("hidden");
         }
       }else{
