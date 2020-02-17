@@ -6,7 +6,7 @@ var matches = 0;
 var maxMatches = 9;
 var attempts = 0;
 var gamesPlayed = 0;
-var winModal = $("div.win-modal");
+var winModal;;
 var loseModal;
 var accuracyPercentage = 0;
 var canBeClicked = true;
@@ -54,6 +54,7 @@ function handleCardClick(event){
         if(matches === maxMatches){
           gamesPlayed++;
           displayStats();
+          winModal =  = $("div.win-modal");
           winModal.removeClass("hidden");
         }
       }else{
