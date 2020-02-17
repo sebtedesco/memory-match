@@ -124,7 +124,7 @@ function handleCardClick(event){
     initializeApp();
     setTimeout(function () {
       canBeClicked = true;
-    }, 3000);
+    }, 2000);
   }
 
   function shuffleCards(){
