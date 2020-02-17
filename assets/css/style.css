@@ -214,13 +214,15 @@ body {
 
 .start-button {
   position: absolute;
-  top: 40%;
-  left: 40%;
-  height: 20vh;
-  width: 20vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  height: 25%;
+  width: 25%;
   background-image: url(../images/looney-tunes-logo.png);
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
   cursor: pointer;
 }
 
