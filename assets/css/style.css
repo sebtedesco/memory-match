@@ -55,6 +55,7 @@ body {
   margin: 4px;
   padding: 12px;
   color: black;
+  transition-duration: 2000ms;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   text-align: center;
@@ -70,6 +71,9 @@ body {
   padding: 8px;
 }
 
+.back:hover {
+  border: 4px solid white;
+}
 .card {
   cursor: pointer;
   height: 30%;
@@ -212,6 +216,11 @@ body {
   to{border-right-color: transparent;}
 }
 
+.start-button:hover {
+  height: 30%;
+  width: 30%;
+}
+
 .start-button {
   position: absolute;
   left: 50%;
@@ -219,6 +228,7 @@ body {
   transform: translate(-50%,-50%);
   height: 25%;
   width: 25%;
+  transition: 100ms;
   background-image: url(../images/looney-tunes-logo.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -254,6 +264,10 @@ div.modal-text {
   text-align: center;
 }
 
+.reset-game-button:hover, .try-again-button:hover {
+  border: 4px solid saddlebrown;
+}
+
 .reset-game-button, .try-again-button {
   font-size: 1.2rem;
   color: saddlebrown;
@@ -261,7 +275,7 @@ div.modal-text {
   font-family: 'Courier New', Courier, monospace;
   border: 3px solid saddlebrown;
   border-radius: 8px;
-  padding: 4px;
+  padding: 8px;
   cursor: pointer;
   margin-right: 11px;
 }

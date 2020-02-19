@@ -73,7 +73,7 @@ function handleCardClick(event){
             firstCardClicked = null;
             secondCardClicked = null;
             canBeClicked = true;
-          }, 1500);
+          }, 1000);
         }
       }
     }
