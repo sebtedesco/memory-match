@@ -100,6 +100,7 @@ function handleCardClick(event){
     bugsBunnyPosition = 40;
     elmerFuddPosition = 0;
     $(".bad-guy").css("left", elmerFuddPosition + "%");
+    $(".bugs-bunny").removeClass("bugs-running");
     $(".bugs-bunny").css("left", bugsBunnyPosition + "%");
     displayStats();
     $(".container-around-cards div").removeClass("hidden");
@@ -117,6 +118,7 @@ function handleCardClick(event){
     firstCardClicked = null;
     secondCardClicked = null;
     $(".bad-guy").css("left", elmerFuddPosition + "%");
+    $(".bugs-bunny").removeClass("bugs-running");
     $(".bugs-bunny").css("left", bugsBunnyPosition + "%");
     displayStats();
     $(".container-around-cards div").removeClass("hidden");
