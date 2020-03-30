@@ -73,6 +73,7 @@ body {
 
 .back:hover {
   border: 4px solid white;
+  opacity: .4;
 }
 .card {
   cursor: pointer;
